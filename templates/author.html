@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+{% block content %}
+    <h1>Hi this is {{ name }}~</h1>
+{% endblock %}
+{% block sidebar %}
+{% load static %}
+<img src="{% static 'doge.gif' %}" alt="Girl in a jacket" width="500" height="600">
+      <ul class="sidebar-nav">
+          <h1>Side bar has  {{ sidebar|length }} elements~</h1>
+          {% for bar in sidebar %}
+                <li><a href="">{{ bar }}</a></li>
+          {% endfor %}
+      </ul>
+
+<table>
+{% for a in articles %}
+  <tr>
+    <td>{{ a.user }}</td>
+    <td>{{ a.content }}</td>
+    <td>{{ a.last_update }}</td>
+  </tr>
+    {% endfor %}
+</table>
+{% endblock %}
